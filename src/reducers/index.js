@@ -6,10 +6,21 @@ function reducer(state = [], action) {
     case 'FILTER':
       return { ...state,
         filtered: state.original.filter(
-          (offer) => `${offer.position}${offer.role}${offer.level}${JSON.stringify(offer.languages)}${JSON.stringify(offer.tools)}` // Filter by name and price
-            .toUpperCase()
-            .includes(action.filter.toUpperCase()),
+          (offer) => {
+            return offer.filtrable.some(
+              (filter) => {
+                return filter.includes(action.filter);
+              },
+            );
+          },
         ),
+
+        // filtered: state.original.filter(
+        //   (offer) => `${offer.position}${offer.role}${offer.level}${JSON.stringify(offer.languages)}${JSON.stringify(offer.tools)}` // Filter by name and price
+        //     .toUpperCase()
+        //     .includes(action.filter.toUpperCase()),
+        // ),
+
       };
     case 'SET_STATE':
       return action.payload;
