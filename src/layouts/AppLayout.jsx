@@ -11,11 +11,11 @@ const Main = styled.main`
 const AppLayout = (props) => {
 
   useEffect(() => {
-    const value = 'Senior';
-    props.dispatch({
-      type: 'FILTER',
-      filter: value,
-    });
+    const value = ['Frontend', 'Senior'];
+    // props.dispatch({
+    //   type: 'FILTER',
+    //   filter: value,
+    // });
   }, []);
 
   return (

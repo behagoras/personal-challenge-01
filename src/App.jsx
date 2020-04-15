@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -15,10 +15,29 @@ import Users from './pages/Users';
 import AppLayout from './layouts/AppLayout';
 import GlobalStyles from './styles/globalStyles';
 
-const store = createStore(reducers, { original: mockStore, filtered: mockStore });
+const withFilters = mockStore.map((offer) => {
+  const languages = offer.languages ? [...offer.languages] : [];
+  const tools = offer.tools ? [...offer.tools] : [];
+  return {
+    ...offer,
+    filtrable: [
+      offer.role && offer.role,
+      offer.level,
+      offer.contract,
+      offer.location,
+      ...languages,
+      ...tools,
+    ],
+  };
+});
+
+const store = createStore(reducers, {
+  original: withFilters,
+  filtered: withFilters,
+  filters: [],
+});
 
 const App = () => {
-
   return (
     <Provider store={store}>
       <Router>
