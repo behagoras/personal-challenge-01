@@ -6,10 +6,10 @@ function reducer(state = [], action) {
     case 'FILTER':
       return { ...state,
         filtered: state.original.filter(
-          (article) => `${article.name}${article.price}` // Filter by name and price
+          (offer) => `${offer.position}${offer.role}${offer.level}${JSON.stringify(offer.languages)}${JSON.stringify(offer.tools)}` // Filter by name and price
             .toUpperCase()
             .includes(action.filter.toUpperCase()),
-        ).sort((a, b) => (a.name < b.name ? -1 : 1)).slice(), // Sort descending
+        ),
       };
     case 'SET_STATE':
       return action.payload;

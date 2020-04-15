@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -17,27 +17,30 @@ import GlobalStyles from './styles/globalStyles';
 
 const store = createStore(reducers, { original: mockStore, filtered: mockStore });
 
-const App = () => (
-  <Provider store={store}>
-    <Router>
-      <GlobalStyles />
-      <div>
-        <AppLayout>
-          <Switch>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/users">
-              <Users />
-            </Route>
-            <Route path="/">
-              <Offers />
-            </Route>
-          </Switch>
-        </AppLayout>
-      </div>
-    </Router>
-  </Provider>
-);
+const App = () => {
+
+  return (
+    <Provider store={store}>
+      <Router>
+        <GlobalStyles />
+        <div>
+          <AppLayout>
+            <Switch>
+              <Route path="/about">
+                <About />
+              </Route>
+              <Route path="/users">
+                <Users />
+              </Route>
+              <Route path="/">
+                <Offers />
+              </Route>
+            </Switch>
+          </AppLayout>
+        </div>
+      </Router>
+    </Provider>
+  );
+};
 
 export default App;
