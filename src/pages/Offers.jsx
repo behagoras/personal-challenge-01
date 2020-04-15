@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
+import { connect } from 'react-redux';
 import Offer from '../components/Offer';
-import offersData from '../mocks/data.json';
+// import offersData from '../mocks/data.json';
 
 const Container = styled.div`
   padding: 25px;
@@ -11,18 +12,21 @@ const Container = styled.div`
   }
 `;
 
-const Home = () => {
-  const [offers, setOffers] = useState([]);
-  useEffect(() => {
-    setOffers(offersData);
-  }, []);
+const Home = ({ filtered }) => {
+  console.log('filtered', filtered);
   return (
     <Container>
       {
-        offers.map((offer) => <Offer key={offer.id} data={offer} />)
+        filtered.map((offer) => <Offer key={offer.id} data={offer} />)
       }
     </Container>
   );
 };
 
-export default Home;
+const mapStateToProps = ({ filtered }) => {
+  return {
+    filtered,
+  };
+};
+
+export default connect(mapStateToProps)(Home);
