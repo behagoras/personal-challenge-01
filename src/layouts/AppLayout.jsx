@@ -9,15 +9,14 @@ const Main = styled.main`
 `;
 
 const AppLayout = (props) => {
-
   useEffect(() => {
     const value = [
-      'HTML',
-      'Senior',
+      'JavaScript',
+      'Sass',
     ];
     props.dispatch({
       type: 'FILTER',
-      filter: value,
+      filters: value,
     });
   }, []);
 
