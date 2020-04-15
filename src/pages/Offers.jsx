@@ -13,7 +13,7 @@ const Container = styled.div`
 `;
 
 const Home = ({ filtered }) => {
-  console.log('filtered', filtered);
+  console.log('filtered', JSON.stringify(filtered));
   return (
     <Container>
       {

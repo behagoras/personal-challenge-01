@@ -11,7 +11,10 @@ const Main = styled.main`
 const AppLayout = (props) => {
 
   useEffect(() => {
-    const value = ['HTML'];
+    const value = [
+      'HTML',
+      'Senior',
+    ];
     props.dispatch({
       type: 'FILTER',
       filter: value,
