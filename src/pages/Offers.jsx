@@ -3,11 +3,13 @@ import styled from 'styled-components';
 import Offer from '../components/Offer';
 import offersData from '../mocks/data.json';
 
-const Header = styled.div``;
 const Container = styled.div`
-  padding: 35px;
+  padding: 25px;
+  @media (min-width: 700px) {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
 `;
-const Main = styled.div``;
 
 const Home = () => {
   const [offers, setOffers] = useState([]);
