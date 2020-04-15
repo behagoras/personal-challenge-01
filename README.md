@@ -1,3 +1,57 @@
+# [Personal challenge 01](https://github.com/behagoras/personal-challenge-01)
+
+## Brief
+
+El desafío es construir una página de destino y hacer que se vea lo más cerca posible del diseño.
+Puedes usar cualquier herramienta que desees para completar el desafío. Entonces, si tienes algo que te gustaría practicar, no dudes en probarlo.
+
+Sus usuarios deberían poder:
+
+- Ver el diseño óptimo para el sitio dependiendo del tamaño de la pantalla de su dispositivo.
+- Vea los estados de desplazamiento para todos los elementos interactivos en la página.
+- Filtra los listados de trabajo según las categorías seleccionadas.
+
+## Filtrado 
+
+### Opción1
+
+Filtra los listados de trabajos basados en las categorías, usando el atributo HTML `data-`. En esta opción, usaría el contenido codificado que ya existe en el archivo [index.html] (./ index.html).
+Las categorias son:
+
+- Rol: Frontend, Backend, Fullstack
+- Nivel: junior, mediano, senior
+- Idiomas: Python, Ruby, JavaScript, HTML, CSS
+- Herramientas: React, Sass, Vue, Django, RoR (Ruby on Rails)
+
+Entonces, si una lista de trabajos es para las siguientes categorías `Frontend, Junior, JavaScript, React`, sus atributos de datos HTML se verían así:` data-role = "frontend" data-level = "junior" data-languages = "javascript "data-tools =" react "`.
+
+### Opcion 2
+
+Utiliza el archivo `./data.json` para extraer los datos y luego agregar dinámicamente el contenido. Esto sería perfecto si estás buscando practicar una biblioteca / marco JS como React, Vue o Svelte.
+
+Para agregar un filtro, el usuario debe hacer clic en las tabletas en el lado derecho de la lista en el escritorio o en la parte inferior en el móvil. 
+
+Para cada filtro agregado, solo se deben devolver los listados que contienen todos los filtros seleccionados.
+
+## Donde encontrar todo
+
+Tu tarea es construir el proyecto a los diseños dentro de la carpeta `/ design`. Encontrarás una versión móvil y una de escritorio del diseño para trabajar.
+
+Los diseños están en formato estático JPG. Esto significa que deberás usar tu mejor criterio para estilos como `font-size`,` padding` y `margin`. Esto debería ayudar a entrenar tu ojo para percibir diferencias en espacios y tamaños.
+
+Encontrarás todos los activos necesarios en la carpeta `/ images`. Los activos ya están optimizados. También hay un archivo `style-guide.md`, que contiene la información que necesitarás, como paleta de colores y fuentes.
+
+## Algunos consejos
+
+Mira los diseños para comenzar a planificar cómo abordará el proyecto. Este paso es crucial para ayudarte a pensar con anticipación las clases de CSS que podría crear para crear estilos reutilizables.
+
+Antes de agregar cualquier estilo, estructura tu contenido con HTML. Escribir su HTML primero puede ayudar a centrar tu atención en la creación de contenido bien estructurado.
+
+Escribe los estilos base para tu proyecto, incluidos los estilos de contenido general, como `font-family` y` font-size`.
+Comienza a agregar estilos en la parte superior de la página y trabaja hacia abajo. 
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
