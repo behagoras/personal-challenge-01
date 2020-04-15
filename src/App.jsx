@@ -5,7 +5,7 @@ import {
   Route,
 } from 'react-router-dom';
 
-import Home from './pages/Home';
+import Offers from './pages/Offers';
 import About from './pages/About';
 import Users from './pages/Users';
 import AppLayout from './layouts/AppLayout';
@@ -24,7 +24,7 @@ const App = () => (
             <Users />
           </Route>
           <Route path="/">
-            <Home />
+            <Offers />
           </Route>
         </Switch>
       </AppLayout>
