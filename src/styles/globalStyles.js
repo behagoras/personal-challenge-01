@@ -1,8 +1,25 @@
 import { createGlobalStyle, css } from 'styled-components';
 
 const variables = css`
+  @import url('https://fonts.googleapis.com/css?family=Spartan:500,700&display=swap');
+  :root {
+    --color-primary: hsl(180, 29%, 50%);
+    --color-primary-dark: hsl(180, 8%, 52%);
+    --color-primary-darker: hsl(180, 14%, 20%);
+    --color-white: hsl(180, 52%, 96%);
+    --color-gray-light: #E6EFEE;
+
+    --color-background: var(--color-white);
+;
+  }
   html{
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Spartan', sans-serif;
+    font-weight: 500;
+    color: var(--color-primary-darker);
+    font-size: 15px;
+  }
+  a:link, a:visited {
+    color: var(--color-primary);
   }
 `;
 const modernize = css`

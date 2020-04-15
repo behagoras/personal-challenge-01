@@ -4,7 +4,9 @@ import Offer from '../components/Offer';
 import offersData from '../mocks/data.json';
 
 const Header = styled.div``;
-const Container = styled.div``;
+const Container = styled.div`
+  padding: 35px;
+`;
 const Main = styled.div``;
 
 const Home = () => {
