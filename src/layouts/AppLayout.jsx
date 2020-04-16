@@ -10,14 +10,14 @@ const Main = styled.main`
 
 const AppLayout = (props) => {
   useEffect(() => {
-    const value = [
-      'JavaScript',
-      'Sass',
-    ];
-    props.dispatch({
-      type: 'FILTER',
-      filters: value,
-    });
+    // const value = [
+    //   'JavaScript',
+    //   'Sass',
+    // ];
+    // props.dispatch({
+    //   type: 'FILTER',
+    //   filters: value,
+    // });
   }, []);
 
   return (

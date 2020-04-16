@@ -29,14 +29,17 @@ function reducer(state = [], action) {
     case 'SET_STATE':
       return action.payload;
     case 'ADD_FILTER':
-      filters = state.filters.filter((filter) => action.filter === filter).push(action.filter);
+      filters = state.filters.filter((filter) => action.filter !== filter);
+      filters.push(action.filter);
+      console.log(filters);
       return {
         ...state,
         filters,
         filtered: filterState(state.original, filters),
       };
     case 'REMOVE_FILTER':
-      filters = state.filters.filter((filter) => action.filter === filter).push(action.filter);
+      filters = state.filters.filter((filter) => action.filter !== filter);
+      console.log(filters);
       return {
         ...state,
         filters,
