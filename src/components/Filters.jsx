@@ -8,8 +8,11 @@ const Container = styled.div`
   background: var(--color-white);
   position: relative;
   padding: 10px;
-  width: calc(100% - 20%);
+  width: calc(100% - 20% - 23px);
   margin:-40px 10%;
+  @media (min-width: 700px) {
+    /* margin:0 10%; */
+  }
 `;
 
 const Filters = (props) => {

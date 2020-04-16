@@ -12,7 +12,7 @@ const Container = styled.header`
   background-repeat:no-repeat;
   background-image:url('https://firebasestorage.googleapis.com/v0/b/personal-challenge-01.appspot.com/o/images%2Fbg-header-mobile.svg?alt=media&token=4db40af5-fde0-4096-b399-1987a3ca1d79');
 
-  @media (min-width: 700px) {
+  @media (min-width: 380px) {
     padding-top: 10%;
     background-image:url('https://firebasestorage.googleapis.com/v0/b/personal-challenge-01.appspot.com/o/images%2Fbg-header-desktop.svg?alt=media&token=23fa321f-35a7-4adc-9963-7117bd8f3099');
   }

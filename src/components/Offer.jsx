@@ -46,8 +46,6 @@ const Company = styled.h3`
   }
 `;
 
-const Labels = styled.div``;
-
 const Label = styled.div`
   display: ${(props) => (props.show ? 'inline-block' : 'none')};
   background: ${(props) => (props.type === 'new' ? 'var(--color-primary)' : 'var(--color-primary-darker)')};
@@ -71,7 +69,7 @@ const Logo = styled.img`
   }
 `;
 
-const Tools = styled.div`
+const Filters = styled.div`
   border-top: 2px solid var(--color-gray-light);
   padding-top: 5px;
   @media (min-width: 700px) {
@@ -81,22 +79,6 @@ const Tools = styled.div`
     margin: auto 0;
     align-items: center;
     justify-content: flex-end;
-  }
-`;
-
-const Tool = styled.div`
-  color: var(--color-primary);
-  font-weight: 700;
-  letter-spacing: 2px;
-  background-color: var(--color-gray-light);
-  padding: 10px;
-  margin: 10px;
-  margin-left: 0;
-  border-radius: 5px;
-  font-size: .8em;
-  display: inline-block;
-  @media (min-width: 700px) {
-    float: right;
   }
 `;
 
@@ -145,10 +127,10 @@ const Offer = (props) => {
       <Data>
         <Header>
           <Company>{data.company}</Company>
-          <Labels>
+          <div>
             <Label show={data.new} type="new">NEW!</Label>
             <Label show={data.featured} type="visited">FEATURED!</Label>
-          </Labels>
+          </div>
         </Header>
         <Position>{data.position}</Position>
         <InfoList>
@@ -158,7 +140,7 @@ const Offer = (props) => {
         </InfoList>
       </Data>
 
-      <Tools>
+      <Filters>
         <Filter onClick={() => { handleClick(data.role); }} key={data.role} label={data.role}>{data.role}</Filter>
         <Filter onClick={() => { handleClick(data.level); }} key={data.level} label={data.level}>{data.level}</Filter>
         {
@@ -171,7 +153,7 @@ const Offer = (props) => {
         {
           data.tools ? data.tools.map((tool) => <Filter onClick={() => { handleClick(tool); }} key={tool} label={tool} />) : ''
         }
-      </Tools>
+      </Filters>
     </Container>
   );
 };
