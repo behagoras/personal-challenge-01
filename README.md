@@ -1,60 +1,44 @@
 # [Personal challenge 01](https://github.com/behagoras/personal-challenge-01)
 
+This is a personal challenge for practicing React, Redux, array transform and styled component.
+
+It consists on a **landing page** following the design in [src/design](src/design)
+
+![](src/design/active-states.jpg)
+
+
+
 ## Brief
 
-El desafío es construir una **landing page** y hacer que se vea lo **más cerca posible del diseño**.
+Users should be able to:
 
-Puedes usar cualquier herramienta que desees para completar el desafío. Entonces, si tienes algo que te gustaría practicar, no dudes en probarlo.
+- **Interact with the optimal design** for the site depending on the screen size of their device (**responsive**).
+- View the **states** of displacement for all interactive elements on the page.
+- **Filter** job listings according to selected categories.
 
-Sus usuarios deberían poder:
+## Filters
 
-- **Ver el diseño** óptimo para el sitio dependiendo del tamaño de la pantalla de su dispositivo (**responsivo**).
-- Ver los **estados** de desplazamiento para todos los elementos interactivos en la página.
-- **Filtra** los listados de trabajo según las categorías seleccionadas. (**`Jobs`**)
+We're using a mock api in the [src/mocks/data.json](src/mocks/data.json) as a local database and interacting via [Redux reducers](src/reducers).
 
-## Filtrado 
+To add a filter, the user must click on any **filtrable field** of any Job Position.
 
-### Opción1
+For each added filter, the lists will display all the selected filters.
 
-Filtra los listados de trabajos basados en las categorías, usando el atributo HTML `data-`. En esta opción, usaría el contenido codificado que ya existe en el archivo [index.html] (./ index.html).
+Any filter could be deleted by clicking onthe filter in the filters list.
 
-Las categorias son:
+## How is structured the project
 
-- Rol: Frontend, Backend, Fullstack
-- Nivel: junior, mediano, senior
-- Idiomas: Python, Ruby, JavaScript, HTML, CSS
-- Herramientas: React, Sass, Vue, Django, RoR (Ruby on Rails)
+This is a regular Create React App so everything is in the folder [src](src/).
 
-Entonces, si una lista de trabajos es para las siguientes categorías `Frontend, Junior, JavaScript, React`, sus atributos de datos HTML se verían así:` data-role = "frontend" data-level = "junior" data-languages = "javascript "data-tools =" react "`.
+We have 3 types of components folders:
 
-### Opcion 2
+- [components](src/components): This folder contains every component with logic and styles.
+- [layouts](src/layouts): This folder contains the main design intented to have the header and footer, If we want to make a different design screen this is the file to go.
+- [pages](src/components): In this folder goes all the containers components intented to be used in the Router
 
-Utiliza el archivo `./data.json` para extraer los datos y luego agregar dinámicamente el contenido. Esto sería perfecto si estás buscando practicar una biblioteca/framework JS como React, Vue, Angular o Svelte.
+ [App.jsx](src/App.jsx): This file has every global configuration, such as react-router and redux, We only have 1 route, but If you want to create new routes, this is the file to go.
 
-Para agregar un filtro, el usuario debe hacer clic en las tabletas en el lado derecho de la lista en el escritorio o en la parte inferior en el móvil. 
-
-Para cada filtro agregado, solo se deben devolver los listados que contienen todos los filtros seleccionados.
-
-## Donde encontrar todo
-
-Tu tarea es construir el proyecto a los diseños dentro de la carpeta `/design`. Encontrarás una versión móvil y una de escritorio del diseño para trabajar.
-
-Los diseños están en formato estático JPG. Esto significa que deberás usar tu mejor criterio para estilos como `font-size`,` padding` y `margin`. Esto debería ayudar a entrenar tu ojo para percibir diferencias en espacios y tamaños.
-
-Encontrarás todos los activos necesarios en la carpeta `/images`. Los activos ya están optimizados. También hay un archivo `style-guide.md`, que contiene la información que necesitarás, como paleta de colores y fuentes.
-
-## Algunos consejos
-
-1. **Mira los diseños** para comenzar a planificar cómo abordará el proyecto. Este paso es crucial para ayudarte a pensar con anticipación las clases de CSS que podría crear para crear estilos reutilizables.
-
-2. Antes de agregar cualquier estilo, **estructura tu contenido con HTML**. Escribir su HTML primero puede ayudar a centrar tu atención en la creación de contenido bien estructurado.
-
-3. Escribe los estilos base para tu proyecto, incluidos los estilos de contenido general, como `font-family` y` font-size`.
-   Comienza a agregar estilos en la parte superior de la página y trabaja hacia abajo. 
-
-
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Redux: We have just 1 reducer, located in [src/reducers/index.js](src/reducers/index.js).
 
 ## Available Scripts
 
@@ -82,43 +66,3 @@ The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
