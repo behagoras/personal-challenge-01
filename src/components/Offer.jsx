@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 
+import Filter from './Filter';
+
 const Container = styled.div`
   box-shadow: 0 40px 20px hsla(180, 50%, 20%, .16), 0 3px 6px hsla(180, 50%, 20%, .23);
   border-radius: 10px;
@@ -35,7 +37,7 @@ const Header = styled.div`
 
 const Company = styled.h3`
   margin: 20px 0;
-  margin-right: 20px;
+  margin-right: 10px;
   font-size: 1em;
   color: var(--color-primary);
   @media (min-width: 700px) {
@@ -157,17 +159,17 @@ const Offer = (props) => {
       </Data>
 
       <Tools>
-        <Tool onClick={() => { handleClick(data.role); }} key={data.role}>{data.role}</Tool>
-        <Tool onClick={() => { handleClick(data.level); }} key={data.level}>{data.level}</Tool>
+        <Filter onClick={() => { handleClick(data.role); }} key={data.role} label={data.role}>{data.role}</Filter>
+        <Filter onClick={() => { handleClick(data.level); }} key={data.level} label={data.level}>{data.level}</Filter>
         {
           data.languages ? data.languages.map((language) => (
-            <Tool onClick={() => { handleClick(language); }} key={language}>
+            <Filter onClick={() => { handleClick(language); }} key={language} label={language}>
               {language}
-            </Tool>
+            </Filter>
           )) : ''
         }
         {
-          data.tools ? data.tools.map((tool) => <Tool onClick={() => { handleClick(tool); }} key={tool}>{tool}</Tool>) : ''
+          data.tools ? data.tools.map((tool) => <Filter onClick={() => { handleClick(tool); }} key={tool} label={tool} />) : ''
         }
       </Tools>
     </Container>

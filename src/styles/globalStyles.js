@@ -1,7 +1,6 @@
 import { createGlobalStyle, css } from 'styled-components';
 
 const variables = css`
-  @import url('https://fonts.googleapis.com/css?family=Spartan:500,700&display=swap');
   :root {
     --color-primary: hsl(180, 29%, 50%);
     --color-primary-dark: hsl(180, 8%, 52%);

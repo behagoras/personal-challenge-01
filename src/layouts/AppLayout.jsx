@@ -4,8 +4,12 @@ import { connect } from 'react-redux';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
+const Container = styled.div`
+  width:100%;
+`;
 const Main = styled.main`
-  margin-bottom:150px;
+  margin-top:50px;
+
 `;
 
 const AppLayout = (props) => {
@@ -21,13 +25,13 @@ const AppLayout = (props) => {
   }, []);
 
   return (
-    <div>
+    <Container>
       <Header />
       <Main>
         {props.children}
       </Main>
       <Footer />
-    </div>
+    </Container>
   );
 };
 
