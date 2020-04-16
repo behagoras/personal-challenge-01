@@ -1,6 +1,6 @@
 # [Personal challenge 01](https://github.com/behagoras/personal-challenge-01)
 
-This is a personal challenge for practicing React, Redux, array transform and styled component.
+This is a personal challenge for practicing React, Redux, array transformations and styled component.
 
 It consists on a **landing page** following the design in [src/design](src/design)
 
